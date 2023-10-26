@@ -17,7 +17,7 @@ class Tab2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab1, container, false)
+        return inflater.inflate(R.layout.fragment_tab2, container, false)
     }
 
 }

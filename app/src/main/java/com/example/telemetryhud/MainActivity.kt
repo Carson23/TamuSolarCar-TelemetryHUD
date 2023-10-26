@@ -14,24 +14,16 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
-
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -41,30 +33,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
         when (item.itemId) {
-            R.id.nav_1 -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Tab1()).commit()
-            R.id.nav_2 -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Tab2()).commit()
-            R.id.nav_3 -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Tab3()).commit()
-            R.id.nav_4 -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Tab4()).commit()
+            R.id.nav_1 -> replaceFragment(Tab1())
+            R.id.nav_2 -> replaceFragment(Tab2())
+            R.id.nav_3 -> replaceFragment(Tab3())
+            R.id.nav_4 -> replaceFragment(Tab4())
         }
-        drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
     private fun replaceFragment(fragment: Fragment) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            onBackPressedDispatcher.onBackPressed()
-        }
     }
 }

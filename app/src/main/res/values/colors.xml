@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#1a9df1</color>
     <color name="maroon">#800000</color>
+    <color name="lightmaroon">#C68A8A</color>
     <color name="lavender">#8692f7</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

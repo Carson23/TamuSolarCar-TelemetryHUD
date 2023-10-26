@@ -6,33 +6,10 @@
         <item name="colorPrimaryVariant">@color/maroon</item>
         <item name="android:statusBarColor">@color/blue</item>
     </style>
-    <style name="NavigationDrawerStyle">
-
-        <item name="android:textSize">20sp</item><!-- text size in menu-->
-
-        <!-- item size in menu-->
-        <item name="android:listPreferredItemHeightSmall">80dp</item>
-        <item name="listPreferredItemHeightSmall">80dp</item>
-
-        <!-- item padding left in menu-->
-        <item name="android:listPreferredItemPaddingLeft">8dp</item>
-        <item name="listPreferredItemPaddingLeft">8dp</item>
-
-        <!-- item padding right in menu-->
-        <item name="android:listPreferredItemPaddingRight">8dp</item>
-        <item name="listPreferredItemPaddingRight">8dp</item>
-        <android.support.design.internal.NavigationMenuItemView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/listPreferredItemHeightSmall"
-            android:paddingLeft="?attr/listPreferredItemPaddingLeft"
-            android:paddingRight="?attr/listPreferredItemPaddingRight"
-            android:drawablePadding="@dimen/navigation_icon_padding"
-            android:gravity="center_vertical|start"
-            android:maxLines="1"
-            android:fontFamily="sans-serif-thin"
-            android:textSize="62sp"
-            android:textAppearance="?attr/textAppearanceListItem" />
+    <style name="MenuTextStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 
