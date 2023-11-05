@@ -2,16 +2,13 @@ package com.example.telemetryhud
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.Window
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,6 +27,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, Tab1()).commit()
             navigationView.setCheckedItem(R.id.nav_1)
         }
+        hideSystemUI()
+    }
+    fun hideSystemUI() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

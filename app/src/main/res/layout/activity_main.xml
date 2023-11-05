@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".MainActivity">
@@ -24,13 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextureView
-        android:id="@+id/textureView"
-        android:layout_width="400dp"
-        android:layout_height="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
@@ -41,33 +34,31 @@
         app:layout_constraintStart_toEndOf="@+id/nav_view"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
     </FrameLayout>
-
-    <VideoView
-        android:id="@+id/videoView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textureView"
-        app:layout_constraintEnd_toEndOf="@+id/fragment_container"
-        app:layout_constraintStart_toStartOf="@+id/textureView"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:background="#3E2E5557"
         app:itemBackground="@drawable/menu_item_background_selector"
         app:itemHorizontalPadding="10sp"
-        app:itemIconPadding="10sp"
-        app:itemIconSize="80sp"
+        app:itemIconPadding="5sp"
+        app:itemIconSize="100sp"
         app:itemIconTint="@color/maroon"
         app:itemTextAppearance="@style/MenuTextStyle"
-        app:itemVerticalPadding="10dp"
+        app:itemVerticalPadding="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:menu="@menu/nav_menu" />
+        app:menu="@menu/nav_menu" >
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
